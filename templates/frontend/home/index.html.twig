@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    {# 3D printer video #}
+    <section>
+        <video autoplay muted loop>
+            <source src="{{ asset('videos/3D printer.mp4') }}" type="video/mp4">
+        </video>
+    </section>
+    {# 3D printer video #}
+
+    {# Best sellers #}
+    <section class="best-sellers">
+        <h1 class="title-home">Meilleures ventes</h1>
+        <div class="flex cards-best">
+            {% for product in products %}
+                <div class="card-best">
+                    <a href="{{ path('app_frontend_product_display', {slug: product.slug}) }}">
+                        <img src="/uploads/products/{{ product.image }}" alt="{{ product.name }}">
+                    </a>
+                    <div class="body-card-product">
+                        <h3>{{ product.name }}</h3>
+                        <p>par <a href="{{ path('app_frontend_designer_display', {slug: product.designer.slug}) }}" class="link">{{ product.designer }}</a></p>
+                        <span>{{ (product.price / 100) | number_format(2, ',', '.') }}€</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="visit-shop">
+            <a href="{{ path('app_frontend_product_index') }}" class="button">Voir nos produits</a>
+        </div>
+    </section>
+    {# Best sellers #}
+
+    {# Who are we ? #}
+    <section class="flex who-are-we">
+        <div>
+            <img src="/images/logo.png" alt="logo 3DWWM">
+        </div>
+        <div>
+            <h1 class="title-home">Qui sommes-nous ?</h1>
+            <p>Originaire de Seine-et-Marne, je m'appel Fabrice REAUME et j'ai 25 ans.
+               <br>Après l'obtention de ma certification "Mobiliser les Compétences Numériques", j'ai intégré DORANCO pour un Titre Professionnel Développeur Web et Web Mobile.
+               <br>
+               <br>
+               3DWWM est un service d'impression 3D commercialisent des objets pratiques qui facilitent la vie au quotidien.
+               <br>
+               Ce service est destiné aux personnes voulant profiter de cette technologie sans avoir besoin d'investir dans une imprimante 3D.
+               <br>
+               <br>
+               Ce site de vente est fictif et n'a pas pour but de faire profits.
+               <br>
+               3DWWM est mon projet de fin d'études pour l'obtention du Titre Professionnel.
+            </p>
+        </div>
+    </section>
+    {# Who are we ? #}
+
+{% endblock %}

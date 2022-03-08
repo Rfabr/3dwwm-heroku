@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commandes | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="title">MES COMMANDES</h1>
+        <a href="{{ path('app_frontend_account_index') }}" id="fs-12" class="link"><span class="arrow"><</span>Retour à mon compte</a>
+        {% if orders|length == 0 %}
+            <div class="center">
+                <p class="didn-t">Vous n'avez pas encore commandé.</p>
+            </div>
+        {% else %}
+            <div class="overflow">
+                <table id="fs-12" class="table-my-orders">
+                    <thead>
+                        <tr>
+                            <th>N° de commande</th>
+                            <th>Date de commande</th>
+                            <th>Produit(s)</th>
+                            <th>Montant total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <td><span>{{ order.id }}</span></td>
+                                <td>{{ order.createdAt|date('d/m/Y') }}</td>
+                                <td>{{ order.orderDetails|length }}</td>
+                                <td>{{ ((order.getTotal + order.carrierPrice) / 100) | number_format(2, ',', '.') }}€</td>
+                                <td><a href="{{ path('app_frontend_account_order_display', {id: order.id}) }}" class="link">Détails</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

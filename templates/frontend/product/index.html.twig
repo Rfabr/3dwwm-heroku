@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos produits | 3DWWM{% endblock %}
+
+{% block content %}
+    <section class="our-products">
+        {{ form_start(form) }}
+            <div class="search flex">
+                <div>
+                    <div>
+                        <span>{{ form_widget(form.name) }}</span>
+                    </div>
+                    <div>
+                        <span>{{ form_widget(form.category) }}</span>
+                        <span>{{ form_widget(form.designer) }}</span>
+                    </div>
+                </div>
+                <div>
+                    {{ form_widget(form.submit) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+        <div class="flex cards-product">
+            {% for product in products %}
+                <div class="card-product">
+                    <a href="{{ path('app_frontend_product_display', {slug: product.slug}) }}">
+                        <img src="/uploads/products/{{ product.image }}" alt="{{ product.name }}">
+                    </a>
+                    <div class="card-product-body">
+                        <h3>{{ product.name }}</h3>
+                        <p>par <a href="{{ path('app_frontend_designer_display', {slug: product.designer.slug}) }}" class="link">{{ product.designer }}</a></p>
+                        <span>{{ (product.price / 100) | number_format(2, ',', '.') }}€</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div> 
+    </section>
+{% endblock %}

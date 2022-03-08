@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation commande | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="title">CONFIRMATION COMMANDE</h1>
+        <p>Bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,
+           <br>
+           <br>
+           Merci pour votre commande chez 3DWWM !
+           <br>
+           Un e-mail de confirmation a été envoyé à l'adresse <strong>{{ order.user.email }}</strong> pour votre commande n°<strong>{{ order.id }}</strong>.
+           <br>
+           <br>
+           Votre commande sera livrée par <strong>{{ order.carrierName }}</strong> à l'adresse suivante :
+           <br>
+           <strong>{{ order.delivery|raw }}</strong>
+           <br>
+           <br>
+           Pour suivre l'avancé de votre commande, rendez-vous dans votre <a href="{{ path('app_frontend_account_order_index') }}" class="link">compte.</a>
+        </p>
+    </section>
+{% endblock %}

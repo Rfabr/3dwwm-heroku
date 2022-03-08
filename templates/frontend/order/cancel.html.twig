@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur paiement | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="title">ERREUR PAIEMENT</h1>
+        <p>Bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,
+           <br>
+           <br>
+           Le paiement pour la commande n°<strong>{{ order.id }}</strong> n'a pu aboutir suite à une erreur.
+           <br>
+           Un e-mail d'erreur de paiement a été envoyé à l'adresse <strong>{{ order.user.email }}</strong>.
+           <br>
+           <br>
+           <a href="{{ path('app_frontend_order_delivery') }}" class="link">Veuillez réessayer</a>
+        </p>
+    </section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ designer.name }} | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="display-designer">
+            <div class="flex title-designer">
+                <div>
+                    <img src="/uploads/designers/{{ designer.image }}" alt="{{ designer.name }}" class="image-designer">
+                </div>
+                <div>
+                    <h1 class="title">{{ designer.name }}</h1>
+                    <a href="{{ designer.link }}" target="_blank" class="link">Voir le profil Thingiverse</a>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="center">
+                <h2>Modèle(s)</h2>
+            </div>
+            <div class="flex models-designer">
+                {% for product in designer.products %}
+                <div>
+                    <a href="{{ path('app_frontend_product_display', {slug: product.slug}) }}">
+                        <img src="/uploads/products/{{ product.image }}" alt="{{ product.name }}">
+                    </a>
+                    <div class="body-card-product">
+                        <h3>{{ product.name }}</h3>
+                        <span>{{ (product.price / 100) | number_format(2, ',', '.') }}€</span>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

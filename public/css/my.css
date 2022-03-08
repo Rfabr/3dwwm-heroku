@@ -1,0 +1,1281 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* BODY */
+body
+{
+    background: linear-gradient(90deg, #3E4044 0%, #28292F 100%);
+}
+
+.flex
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section
+{
+    margin: auto;
+    height: 100vh;
+    color: #F5F5F5;
+    width: min(1196px, 100%);
+}
+
+img
+{
+    border-radius: 6px;
+}
+
+.title
+{
+    font-size: 39px;
+    font-weight: 300;
+    margin: 75px 0 25px;
+}
+
+.title::before
+{
+    content: "";
+    width: 91px;
+    height: 10px;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background: #89FFFD;
+}
+
+.center
+{
+    text-align: center;
+}
+
+.link
+{
+    color: #89FFFD;
+    text-decoration: none;
+}
+
+table thead
+{
+    color: #3E4044;
+    background: #89FFFD;
+}
+
+table th
+{
+    font-weight: 300;
+}
+
+table tbody
+{
+    text-align: center;
+    background: rgba(245, 245, 245, .4);
+}
+
+table img
+{
+    height: 50px;
+    margin: 0 25px;
+}
+
+table tfoot
+{
+    text-align: right;
+    background: rgba(245, 245, 245, .4);
+}
+
+table,
+table th,
+table td
+{
+    border-collapse: collapse;
+}
+
+table tr
+{
+    border:1px solid #89FFFD;
+}
+
+table th,
+table td
+{
+    padding: 10px 25px;
+}
+
+.didn-t
+{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.button
+{
+    border: none;
+    font-size: 18px;
+    font-weight: 300;
+    color: #3E4044;
+    border-radius: 6px;
+    padding: 15px 20px;
+    text-decoration: none;
+    background: #89FFFD;
+}
+
+.arrow
+{
+    color: #F5F5F5;
+    font-weight: 300;
+    margin-right: 5px;
+}
+
+.form-group
+{
+    border: none;
+}
+
+.order-price
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.body-card-product
+{
+    margin-top: 5px;
+    position: relative;
+}
+
+.body-card-product h3
+{
+    font-weight: 300;
+}
+
+.body-card-product span
+{
+    top: 0;
+    right: 0;
+    font-size: 18px;
+    font-weight: 300;
+    position: absolute;
+}
+
+/* HEADER */
+header
+{
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    position: fixed;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(62, 64, 68, .4) 0%, rgba(40, 41, 47, .4) 100%);
+}
+
+header a
+{
+    color: #F5F5F5;
+    text-decoration: none;
+}
+
+.admin
+{
+    color: #FF0000;
+}
+
+header span
+{
+    color: #89FFFD;
+}
+
+header nav
+{
+    gap: 25px;
+}
+
+header nav a:hover
+{
+    color: #89FFFD;
+}
+/* HEADER */
+
+/* FOOTER */
+footer
+{
+    width: 100%;
+    padding: 25px;
+    color: #F5F5F5;
+    position: absolute;
+    text-align: center;
+}
+/* FOOTER */
+
+/* BODY */
+
+
+/* ---------- FRONTEND/HOME ----------> index.html.twig <---------- */
+
+/* 3D printer video */
+video
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+/* 3D printer video */
+
+.title-home
+{
+    font-size: 64px;
+    font-weight: 300;
+    margin-top: 25px;
+}
+
+.title-home::before
+{
+    content: "";
+    width: 150px;
+    height: 10px;
+    display: block;
+    margin-bottom: 8px;
+    border-radius: 30px;
+    background: #89FFFD;
+}
+
+/* Best sellers */
+.best-sellers
+{
+    padding-top: 50px;
+}
+
+.cards-best
+{
+    margin: 25px 0;
+    justify-content: space-around;
+}
+
+.card-best img
+{
+    width: 292px;
+    height: 219px;
+}
+
+.visit-shop
+{
+    margin-top: 60px;
+    text-align: center;
+}
+/* Best sellers */
+
+/* Who are we ? */
+.who-are-we p
+{
+    margin-top: 20px;
+}
+/* Who are we ? */
+
+/* ---------- FRONTEND/HOME ----------> index.html.twig <---------- */
+
+
+/* ---------- SECURITY ----------> register.html.twig <---------- */
+.form-register
+{
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 25px;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, .4);
+}
+
+.form-register label
+{
+    font-size: 18px;
+}
+
+.form-register .center
+{
+    margin-top: 25px;
+}
+
+.register-error
+{
+    color: #FF0000;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.input-register
+{
+    border: none;
+    width: 300px;
+    padding: 5px;
+    border-radius: 6px;
+}
+/* ---------- SECURITY ----------> register.html.twig <---------- */
+
+
+/* ---------- SECURITY ----------> login.html.twig <---------- */
+.form-login
+{
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 25px;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, .4);
+}
+
+.form-login .flex
+{
+    margin-bottom: 25px;
+}
+
+.form-login label
+{
+    font-size: 18px;
+}
+
+.form-login input
+{
+    border: none;
+    width: 300px;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.form-login .center
+{
+    margin-top: 25px;
+}
+
+.login-error
+{
+    color: #FF0000;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.redirection-register
+{
+    margin-top: 25px;
+    text-align: center;
+}
+/* ---------- SECURITY ----------> login.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ACCOUNT ----------> index.html.twig <---------- */
+.cards-account
+{
+    height: auto;
+    min-height: 483.15px;
+    justify-content: space-around;
+}
+
+.cards-account .flex
+{
+    margin: 0;
+}
+
+.card-account
+{
+    width: 250px;
+    height: 400px;
+    padding: 25px 0;
+    border-radius: 6px;
+    flex-direction: column;
+    background: rgba(245, 245, 245, .4);
+}
+
+.card-account p
+{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.card-account img
+{
+    width: 250px;
+}
+
+.card-account:first-child
+{
+    align-self: flex-end;
+}
+
+.card-account:last-child
+{
+    align-self: flex-start;
+}
+/* ---------- FRONTEND/ACCOUNT ----------> index.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ACCOUNT/ORDER ----------> index.html.twig <---------- */
+.table-my-orders
+{
+    margin: 25px auto 0;
+}
+/* ---------- FRONTEND/ACCOUNT/ORDER ----------> index.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ACCOUNT/ORDER ----------> display.html.twig <---------- */
+.account-details-order
+{
+    margin-top: 25px;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.account-details-order h2
+{
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.account-details-delivery
+{
+    padding: 20px 10px;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, .4);
+}
+/* ---------- FRONTEND/ACCOUNT/ORDER ----------> display.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> index.html.twig <---------- */
+.cards-account-address
+{
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    justify-content: space-around;
+}
+
+.card-account-address
+{
+    width: 32%;
+    margin-top: 25px;
+    padding: 20px 10px;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, .4);
+}
+
+.card-account-address h3
+{
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.btn-add-address
+{
+    margin-bottom: 25px;
+}
+/* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> index.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> add.html.twig & update.html.twig <---------- */
+.form-address
+{
+    width: 50%;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, .4);
+}
+
+.input-address
+{
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.input-address-width
+{
+    width: 49.5%;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+/* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> add.html.twig & update.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ACCOUNT/PASSWORD ----------> update.html.twig <---------- */
+.form-password
+{
+    width: 50%;
+    margin: 25px auto;
+    padding: 50px 25px;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, .4);
+}
+
+.password-error
+{
+    color: #FF0000;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.form-password label
+{
+    font-size: 18px;
+}
+
+.form-password .center
+{
+    margin-top: 25px;
+}
+
+.input-password
+{
+    border: none;
+    width: 300px;
+    padding: 5px;
+    border-radius: 6px;
+}
+/* ---------- FRONTEND/ACCOUNT/PASSWORD ----------> update.html.twig <---------- */
+
+
+/* ---------- FRONTEND/PRODUCT ----------> index.html.twig <---------- */
+.our-products
+{
+    margin-top: 100px;
+}
+
+.search
+{
+    width: 50%;
+    padding: 25px;
+    margin: 25px auto;
+    border-radius: 6px;
+    justify-content: space-around;
+    background: rgba(245, 245, 245, .4);
+}
+
+.cards-product
+{
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    justify-content: space-around;
+}
+
+.card-product
+{
+    margin: 10px;
+}
+
+.card-product img
+{
+    width: 292px;
+    height: 219px;
+}
+
+.card-product-body
+{
+    margin-top: 5px;
+    position: relative;
+}
+
+.card-product-body h3
+{
+    font-weight: 300;
+}
+
+.card-product-body span
+{
+    top: 0;
+    right: 0;
+    font-size: 18px;
+    font-weight: 300;
+    position: absolute;
+}
+
+.input-product-search
+{
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+.input-product-search-width
+{
+    width: 49%;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+}
+/* ---------- FRONTEND/PRODUCT ----------> index.html.twig <---------- */
+
+
+/* ---------- FRONTEND/PRODUCT ----------> display.html.twig <---------- */
+.display-product
+{
+    gap: 50px;
+    justify-content: center;
+}
+
+.display-product .title
+{
+    margin: 0;
+}
+
+.display-product-content
+{
+    margin-bottom: 25px;
+}
+
+.display-product-content span
+{
+    font-size: 18px;
+    font-weight: 300;
+}
+/* ---------- FRONTEND/PRODUCT ----------> display.html.twig <---------- */
+
+
+/* ---------- FRONTEND/CART ----------> index.html.twig <---------- */
+.table-cart
+{
+    margin: 25px auto 35px;
+}
+
+.table-cart .flex
+{
+    justify-content: space-around;
+}
+
+.table-cart .button-remove
+{
+    border: none;
+    margin: 0 5px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #3E4044;
+    border-radius: 6px;
+    padding: 0 9px;
+    text-decoration: none;
+    background: #89FFFD;
+}
+
+.table-cart .button
+{
+    margin: 0 5px;
+    padding: 0 6px;
+}
+
+.table-cart span
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+/* ---------- FRONTEND/CART ----------> index.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ORDER ----------> delivery.html.twig <---------- */
+.delivery-details .flex
+{
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.delivery-details h2
+{
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.delivery-details .card
+{
+    width: 40%;
+}
+
+.delivery-details .center
+{
+    margin-top: 20px;
+}
+
+.form-check
+{
+    margin: 10px 0;
+    padding: 20px 10px;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, .4);
+}
+/* ---------- FRONTEND/ORDER ----------> delivery.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ORDER ----------> add.html.twig <---------- */
+.recap-my-order .flex
+{
+    gap: 50px;
+    margin-top: 50px;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.recap-my-order .center
+{
+    margin-top: 60px;
+}
+
+.recap-delivery
+{
+    padding: 15px 10px;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, .4);
+}
+/* ---------- FRONTEND/ORDER ----------> add.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ORDER ----------> pay.html.twig <---------- */
+.amount
+{
+    font-weight: 300;
+}
+
+.amount-price
+{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.payment .flex
+{
+    justify-content: space-around;
+}
+
+.credit-card
+{
+    width: 110%;
+    position: relative;
+    margin: 0 auto 25px;
+    border-radius: 10px;
+    padding: 145px 25px 25px;
+    border: solid 1px #89FFFD;
+    background: rgba(245, 245, 245, .4);
+}
+
+.credit-card h2
+{
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin: 25px 25px 0;
+}
+
+.credit-card span
+{
+    color: #89FFFD;
+}
+
+.credit-card .logo-card
+{
+    top: 0;
+    right: 0;
+    height: 125px;
+    position: absolute;
+}
+
+.credit-card .card-ship
+{
+    left: 0;
+    top: 31%;
+    height: 65px;
+    margin-left: 23px;
+    position: absolute;
+    
+}
+
+.input-card-number
+{
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.card-expiry
+{
+    color: #89FFFD;
+    text-align: center;
+}
+
+.input-card-expiry
+{
+    width: 9%;
+    margin: 0 5px 10px;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.input-card-name
+{
+    width: 50%;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.input-card-cryptogram
+{
+    right: 0;
+    bottom: 0;
+    width: 10%;
+    border: none;
+    padding: 5px;
+    position: absolute;
+    border-radius: 6px;
+    margin: 0 25px 25px 0;
+}
+/* ---------- FRONTEND/ORDER ----------> pay.html.twig <---------- */
+
+
+/* ---------- FRONTEND/ORDER ----------> success.html.twig & cancel.html.twig <---------- */
+
+/* ---------- FRONTEND/ORDER ----------> success.html.twig & cancel.html.twig <---------- */
+
+
+/* ---------- FRONTEND/DESIGNER ----------> display.html.twig <---------- */
+.display-designer h1
+{
+    margin: 0;
+}
+
+.display-designer .image-designer
+{
+    width: 75px;
+    height: 75px;
+}
+
+.display-designer h2
+{
+    font-weight: 300;
+}
+
+.title-designer
+{
+    gap: 25px;
+    padding: 25px;
+    margin-top: 75px;
+    justify-content: left;
+}
+
+.models-designer
+{
+    margin-top: 25px;
+    justify-content: space-around;
+}
+/* ---------- FRONTEND/DESIGNER ----------> display.html.twig <---------- */
+
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+@media screen and (max-width:800px)
+{
+    /* BODY */
+    section
+    {
+        padding: 0 25px;
+    }
+
+    .title
+    {
+        font-size: 42px;
+    }
+
+    .title::before
+    {
+        width: 98px;
+    }
+
+    .didn-t
+    {
+        margin-top: 25px;
+    }
+
+    /* HEADER */
+
+    /* BURGER MENU */
+    .menu
+    {
+        top: 0;
+        right: 0;
+        padding: 15px 20px;
+        position: absolute;
+        background: transparent;
+        justify-content: space-between!important;
+    }
+
+    .burger
+    {
+        display: block;
+        cursor: pointer;
+    }
+
+    .burger span
+    {
+        height: 5px;
+        width: 40px;
+        display: block;
+        transition: .3s;
+        border-radius: 6px;
+        background: #F5F5F5;
+    }
+
+    .burger span:nth-child(2)
+    {
+        margin: 6px 0;
+    }
+
+    .burger-reveal span:first-child
+    {
+        transform: rotate(45deg) translate(0, 5px);
+    }
+
+    .burger-reveal span:nth-child(2)
+    {
+        margin: 0;
+        opacity: 0;
+    }
+
+    .burger-reveal span:last-child
+    {
+        transform: rotate(-45deg) translate(0, -10px);
+    }
+
+    nav
+    {
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 75px;
+        height: 100vh;
+        transition: .5s;
+        position: absolute;
+        flex-direction: column;
+        transform: translateX(55%);
+        background: linear-gradient(90deg, #3E4044 0%, #28292F 100%);
+    }
+
+    nav a
+    {
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .nav-reveal
+    {
+        transform: translateX(-45%);
+    }
+    /* BURGER MENU */
+
+    /* HEADER */
+
+    /* BODY */
+
+
+    /* ---------- FRONTEND/HOME ----------> index.html.twig <---------- */
+    .title-home
+    {
+        font-size: 54px;
+    }
+
+    .title-home::before
+    {
+        width: 127px;
+    }
+
+    /* Best sellers */
+    .best-sellers
+    {
+        padding-top: 10px;
+    }
+
+    .cards-best
+    {
+        gap: 25px;
+        flex-direction: column;
+    }
+    /* Best sellers */
+
+    /* Who are we ? */
+    .who-are-we
+    {
+        margin-top: 475px;
+        flex-direction: column;
+    }
+    /* Who are we ? */
+
+    /* ---------- FRONTEND/HOME ----------> index.html.twig <---------- */
+
+
+    /* ---------- SECURITY ----------> register.html.twig <---------- */
+    .form-register .flex
+    {
+        flex-direction: column;
+    }
+
+    .form-register label
+    {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    /* ---------- SECURITY ----------> register.html.twig <---------- */
+
+
+    /* ---------- SECURITY ----------> login.html.twig <---------- */
+    .form-login .flex
+    {
+        flex-direction: column;
+    }
+
+    .form-login label
+    {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    /* ---------- SECURITY ----------> login.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT ----------> index.html.twig <---------- */
+    .cards-account
+    {
+        gap: 25px;
+        flex-direction: column;
+    }
+
+    .card-account
+    {
+        height: 50%;
+    }
+
+    .card-account:first-child
+    {
+        align-self: center;
+    }
+
+    .card-account:last-child
+    {
+        align-self: center;
+    }
+    /* ---------- FRONTEND/ACCOUNT ----------> index.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT/ORDER ----------> index.html.twig <---------- */
+
+    /* ---------- FRONTEND/ACCOUNT/ORDER ----------> index.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT/ORDER ----------> display.html.twig <---------- */
+    .account-details-order h2
+    {
+        font-size: 22px;
+    }
+    /* ---------- FRONTEND/ACCOUNT/ORDER ----------> display.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> index.html.twig <---------- */
+
+    /* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> index.html.twig <---------- */
+
+    /* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> add.html.twig & update.html.twig <---------- */
+    .input-address-width
+    {
+        width: 100%;
+    }
+    /* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> add.html.twig & update.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT/PASSWORD ----------> update.html.twig <---------- */
+    .form-password .flex
+    {
+        flex-direction: column;
+    }
+
+    .form-password label
+    {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    /* ---------- FRONTEND/ACCOUNT/PASSWORD ----------> update.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/PRODUCT ----------> index.html.twig <---------- */
+    .search .button
+    {
+        margin-left: 20px;
+    }
+    /* ---------- FRONTEND/PRODUCT ----------> index.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/PRODUCT ----------> display.html.twig <---------- */
+    
+    /* ---------- FRONTEND/PRODUCT ----------> display.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/CART ----------> index.html.twig <---------- */
+    .table-cart .quantity
+    {
+        display: flex;
+        margin-top: 16px;
+    }
+    /* ---------- FRONTEND/CART ----------> index.html.twig <---------- */
+}
+
+@media screen and (max-width:400px)
+{
+    /* BODY */
+    .title
+    {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+
+    .title::before
+    {
+        height: 6px;
+        width: 44px;
+    }
+
+    .didn-t
+    {
+        font-size: 17px;
+        margin-top: 15px;
+    }
+
+    #fs-12
+    {
+        font-size: 12px;
+    }
+
+    .overflow
+    {
+        overflow-x: auto;
+    }
+    /* BODY */
+
+    /* ---------- FRONTEND/HOME ----------> index.html.twig <---------- */
+    .title-home
+    {
+        font-size: 34px;
+    }
+
+    .title-home::before
+    {
+        width: 80px;
+    }
+    /* ---------- FRONTEND/HOME ----------> index.html.twig <---------- */
+
+
+    /* ---------- SECURITY ----------> register.html.twig <---------- */
+    .form-register
+    {
+        width: 100%;
+    }
+    /* ---------- SECURITY ----------> register.html.twig <---------- */
+
+    /* ---------- SECURITY ----------> login.html.twig <---------- */
+    .form-login
+    {
+        width: 100%;
+    }
+    /* ---------- SECURITY ----------> login.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT ----------> index.html.twig <---------- */
+
+    /* ---------- FRONTEND/ACCOUNT ----------> index.html.twig <---------- */
+
+    
+    /* ---------- FRONTEND/ACCOUNT/ORDER ----------> index.html.twig <---------- */
+    
+    /* ---------- FRONTEND/ACCOUNT/ORDER ----------> index.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT/ORDER ----------> display.html.twig <---------- */ 
+    .account-details-order
+    {
+        gap: 20px;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    .account-details-order h2
+    {
+        font-size: 17px;
+    }
+    /* ---------- FRONTEND/ACCOUNT/ORDER ----------> display.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> index.html.twig <---------- */
+    .cards-account-address
+    {
+        flex-direction: column;
+    }
+
+    .card-account-address
+    {
+        width: 100%;
+    }
+    /* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> index.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> add.html.twig & update.html.twig <---------- */
+    .form-address
+    {
+        width: 100%;
+    }
+    /* ---------- FRONTEND/ACCOUNT/ADDRESS ----------> add.html.twig & update.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/ACCOUNT/PASSWORD ----------> update.html.twig <---------- */
+    .form-password
+    {
+        width: 100%;
+    }
+    /* ---------- FRONTEND/ACCOUNT/PASSWORD ----------> update.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/PRODUCT ----------> index.html.twig <---------- */
+    .search
+    {
+        width: 100%;
+    }
+    /* ---------- FRONTEND/PRODUCT ----------> index.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/PRODUCT ----------> display.html.twig <---------- */
+    .display-product
+    {
+        flex-direction: column;
+    }
+
+    .display-product-content
+    {
+        font-size: 12px;
+    }
+
+    .add-to-cart
+    {
+        text-align: center;
+    }
+    /* ---------- FRONTEND/PRODUCT ----------> display.html.twig <---------- */
+
+
+    /* ---------- FRONTEND/CART ----------> index.html.twig <---------- */
+    
+    /* ---------- FRONTEND/CART ----------> index.html.twig <---------- */
+}

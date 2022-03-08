@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Récapitulatif de la commande | 3DWWM{% endblock %}
+
+{% block content %}
+    <section class="recap-my-order">
+        <h1 class="title">RÉCAPITULATIF DE LA COMMANDE</h1>
+        <div class="flex">
+            <div>
+                {% set total = null %}
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Produit(s)</th>
+                                    <th>Quantité</th>
+                                    <th>Prix</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for element in cart %}
+                                    <tr>
+                                        <td>
+                                            <img src="/uploads/products/{{ element.product.image }}" alt="{{ element.product.name }}">
+                                        </td>
+                                        <td>{{ element.product.name }}</td>
+                                        <td>{{ element.quantity }}</td>
+                                        <td>{{ (element.product.price / 100) | number_format(2, ',', '.') }}€</td>
+                                        <td>{{ (element.product.price * element.quantity / 100) | number_format(2, ',', '.') }}€</td>
+                                    </tr>
+                {% set total = total + (element.product.price * element.quantity) %}
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4"><strong>Total articles</strong></td>
+                                    <td><span>{{ (total / 100) | number_format(2, ',', '.') }}€</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><strong>Frais de livraison</strong></td>
+                                    <td><span>{{ (carrier.price / 100)|number_format(2, ',', '.') }}€</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><strong>Total de la commande</strong></td>
+                                    <td><span class="order-price">{{ ((total / 100) + (carrier.price / 100)) | number_format(2, ',', '.') }}€</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+            </div>
+            <div>
+                <div class="recap-delivery">
+                    <p><strong>Transporteur :</strong> {{ carrier.name }}</p>
+                    <p><strong>Adresse de livraison :</strong></p>
+                    <p>{{ delivery|raw }}</p>
+                </div>
+                <div class="center">
+                    <a href="{{ path('app_frontend_order_pay', {id: id}) }}" class="button">Procéder au paiement</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

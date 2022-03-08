@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails sur l'expédition | 3DWWM{% endblock %}
+
+{% block content %}
+    <section class="delivery-details">
+        <h1 class="title">DÉTAILS SUR L'EXPÉDITION</h1>
+        <div>
+            {% set formHtml %}
+                {{ form_start(form, {action:path('app_frontend_order_add')}) }}
+                    <div class="flex">
+                        <div class="card">
+                            <div>
+                                <h2>Adresse de livraison</h2>
+                                {{ form_widget(form.addresses) }}
+                                <div class="center">
+                                    <a href="{{ path('app_frontend_account_address_add') }}" class="link">Ajouter une adresse</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div>
+                                <h2>Transporteur</h2>
+                                {{ form_widget(form.carriers) }}
+                                <div class="center">
+                                    {{ form_widget(form.submit) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+            {% endset %}
+            {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
+        </div>
+    </section>
+{% endblock %}

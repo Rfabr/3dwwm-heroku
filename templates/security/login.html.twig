@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="title">CONNECTEZ-VOUS À VOTRE COMPTE</h1>
+        <div class="form-login">
+            <form method="post">
+                {% if app.user %}
+                    <div>
+                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+                
+                <div>
+                    <div class="flex">
+                        <label for="inputEmail">E-MAIL</label>
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" autocomplete="email" required autofocus>
+                    </div>
+                    <div class="flex">
+                        <label for="inputPassword">MOT DE PASSE</label>
+                        <input type="password" name="password" id="inputPassword" autocomplete="current-password" required>
+                    </div>
+                </div>
+                
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+            
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+            
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                #}
+                
+                <div class="center">
+                    <button type="submit" class="button">Connexion</button>
+                </div>
+
+                {% if error %}
+                    <div class="login-error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+            </form>
+        </div>
+        <div class="redirection-register">
+            <p>Pas de compte ? <a href="{{ path('app_register') }}" class="link">Créez-en un</a></p>
+        </div>
+    </section>
+{% endblock %}

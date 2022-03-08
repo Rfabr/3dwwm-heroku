@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="title">PANIER</h1>
+        <a href="{{ path('app_frontend_product_index') }}" id="fs-12" class="link"><span class="arrow"><</span>Retour à nos produits</a>
+        {% if app.session.get('cart')|length == 0 %}
+        <div class="center">
+            <p class="didn-t">Votre panier est vide.</p>
+        </div>
+        {% else %}
+            <div class="overflow">
+            <table class="table-cart">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Produit(s)</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for element in dataCart %}
+                        <tr>
+                            <td>
+                                <a href="{{ path('app_frontend_product_display', {slug: element.product.slug}) }}">
+                                    <img src="/uploads/products/{{ element.product.image }}" alt="{{ element.product.name }}">
+                                </a>
+                            </td>
+                            <td>{{ element.product.name }}</td>
+                            <td>{{ (element.product.price / 100) | number_format(2, ',', '.') }}€</td>
+                            <td class="quantity">
+                                <a href="{{ path('app_frontend_cart_remove', {id: element.product.id}) }}" class="button-remove">-</a>
+                                {{ element.quantity }}
+                                <a href="{{ path('app_frontend_cart_add', {id: element.product.id}) }}" class="button">+</a>
+                            </td>
+                            <td>{{ ((element.quantity * element.product.price) / 100) | number_format(2, ',', '.') }}€</td>
+                            <td>
+                                <a href="{{ path('app_frontend_cart_delete', {id: element.product.id}) }}" class="link">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4"><strong>Montant du panier</strong></td>
+                        <td><span>{{ (total / 100) | number_format(2, ',', '.') }}€</span></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
+            <div class="center">
+                <a href="{{ path('app_frontend_order_delivery') }}" id="fs-12" class="button">Passer la commande</a>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

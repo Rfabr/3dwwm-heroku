@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="title">MES ADRESSES</h1>
+        <a href="{{ path('app_frontend_account_index') }}" id="fs-12" class="link"><span class="arrow"><</span>Retour à mon compte</a>
+        {% if app.user.addresses|length == 0 %}
+            <div class="center btn-add-address">
+                <p class="didn-t">Veuillez ajouter une adresse.</p>
+            </div>
+        {% else %}
+            <div class="flex cards-account-address">
+                {% for address in app.user.addresses %}
+                    <div id="fs-12" class="card-account-address">
+                        <div>
+                            <h3>{{ address.name }}</h3>
+                            <p>
+                                {{ address.address }}
+                                <br>
+                                {{ address.postal }} {{ address.city }}
+                                <br>
+                                {{ address.country }}
+                                <br>
+                                <a href="{{ path('app_frontend_account_address_update', {id: address.id}) }}" class="link">Modifier</a> &middot; <a href="{{ path('app_frontend_account_address_delete', {id: address.id}) }}" class="link">Supprimer</a>
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="center">
+            <a href="{{ path('app_frontend_account_address_add') }}" id="fs-12" class="button">Ajouter une adresse</a>
+        </div>
+    </section>
+{% endblock %}

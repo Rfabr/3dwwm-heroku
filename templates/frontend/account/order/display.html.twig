@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande n°{{ order.id }} | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="title">DÉTAILS DE LA COMMANDE</h1>
+        <a href="{{ path('app_frontend_account_order_index') }}" id="fs-12" class="link"><span class="arrow"><</span>Retour à mes commandes</a>
+        <p id="fs-12">
+            <br>
+            Date de commande : {{ order.createdAt|date('d/m/Y') }}
+            <br>
+            N° de commande : {{ order.id }}
+            <br>
+            Total de la commande : {{ ((order.getTotal + order.carrierPrice) / 100) | number_format(2, ',', '.') }}€
+        </p>
+        <br>
+        <hr>
+        <br>
+        <div id="fs-12" class="flex account-details-order">
+            <div>
+                <h2>Récapitulatif de ma commande</h2>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produit(s)</th>
+                                <th>Quantité</th>
+                                <th>Prix</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for element in order.orderDetails %}
+                                <tr>
+                                    <td>{{ element.product }}</td>
+                                    <td>{{ element.quantity }}</td>
+                                    <td>{{ (element.price / 100) | number_format(2, ',', '.') }}€</td>
+                                    <td>{{ (element.total / 100) | number_format(2, ',', '.') }}€</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3"><strong>Total articles</strong></td>
+                                <td><span>{{ (order.getTotal / 100) | number_format(2, ',', '.') }}€</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><strong>Frais de livraison</strong></td>
+                                <td><span>{{ (order.carrierPrice / 100) | number_format(2, ',', '.') }}€</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><strong>Total de la commande</strong></td>
+                                <td><span class="order-price">{{ ((order.getTotal + order.carrierPrice) / 100) | number_format(2, ',', '.') }}€</span></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <h2>Détails sur l'expédition</h2>
+                <div class="account-details-delivery">
+                    <p>
+                        <strong>Transporteur :</strong> {{ order.carrierName }}
+                        <br>
+                        <strong>Adresse de livraison :</strong>
+                        <br>
+                        {{ order.delivery|raw }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

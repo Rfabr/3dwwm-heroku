@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }} | 3DWWM{% endblock %}
+
+{% block content %}
+    <section class="flex display-product">
+        <div>
+            <img src="/uploads/products/{{ product.image }}" alt="{{ product.name }}">
+        </div>
+        <div>
+            <div class="display-product-content">
+                <h1 class="title">{{ product.name }}</h1>
+                <p>par <a href="{{ path('app_frontend_designer_display', {slug: product.designer.slug}) }}" class="link">{{ product.designer }}</a></p>
+                <br>
+                <hr>
+                <br>
+                <p><span>{{ (product.price / 100) | number_format(2, ',', '.') }}€ TTC</span></p>
+                <br>
+                <p>{{ product.description|raw }}</p>
+                <br>
+                <p><strong>Taille du modèle (mm) :</strong> {{ product.size }}</p>
+                <p><strong>Catégorie :</strong> {{ product.category.name }}</p>
+            </div>
+            <br>
+            <div class="add-to-cart">
+                <a href="{{ path('app_frontend_cart_add', {id: product.id}) }}" id="fs-12" class="button">Ajouter au panier</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

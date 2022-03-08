@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement | 3DWWM{% endblock %}
+
+{% block content %}
+    <section class="payment">
+        <h1 class="title">PAIEMENT</h1>
+    <div class="flex">
+            <div>
+                <h2 class="amount">Montant à régler</h2>
+                <div class="center">
+                    <span class="amount-price">{{ ((order.total / 100) + (order.carrierPrice / 100)) | number_format(2, ',', '.') }}€</span>
+                </div>
+            </div>
+        <div>
+            {{ form_start(form) }}
+                <div class="credit-card">
+                    <h2><span>3D</span>WWM</h2>
+                    <img src="/images/logo.png" alt="logo 3DWWM" class="logo-card">
+                    <img src="/images/card-ship.png" alt="puce cb" class="card-ship">
+                    <div>
+                        {{ form_widget(form.number) }}
+                    </div>
+                    <div class="card-expiry">
+                        {{ form_widget(form.expiryMonth) }}/{{ form_widget(form.expiryYear) }}
+                    </div>
+                    <div>
+                        {{ form_widget(form.name) }}
+                    </div>
+                    {{ form_widget(form.cryptogram) }}
+                </div>
+                <div class="center">
+                    {{ form_row(form.submit) }}
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+    </section>
+{% endblock %}

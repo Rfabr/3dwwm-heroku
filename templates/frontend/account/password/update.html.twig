@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier mon mot de passe | 3DWWM{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="title">MODIFIER MON MOT DE PASSE</h1>
+        <a href="{{ path('app_frontend_account_index') }}" id="fs-12" class="link"><span class="arrow"><</span>Retour à mon compte</a>
+        {{ form_start(form) }}
+            <div class="form-password">
+                {% if notification %}
+                    <div class="password-error">{{ notification }}</div>
+                {% endif %}
+                <div class="flex">
+                    <label>{{ form_label(form.current_password) }}</label>
+                    <span>{{ form_widget(form.current_password) }}</span>
+                </div>
+                <br>
+                <div class="password-error">{{ form_errors(form.new_password.first) }}</div>
+                <div class="flex">
+                    <label>{{ form_label(form.new_password, 'NOUVEAU MOT DE PASSE') }}</label>
+                    <span>{{ form_widget(form.new_password.first) }}</span>
+                </div>
+                <br>
+                <div class="flex">
+                    <label>{{ form_label(form.new_password.second) }}</label>
+                    <span>{{ form_widget(form.new_password.second) }}</span>
+                </div>
+                <div class="center">
+                    {{ form_widget(form.submit) }}
+                </div>
+            </div>
+        {{ form_end(form) }}
+    </section>
+{% endblock %}
