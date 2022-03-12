@@ -23,7 +23,7 @@ class OrderRepository extends ServiceEntityRepository
     {
         return $this
             ->createQueryBuilder('o')
-            // ->andWhere('o.isPaid = 1')
+            ->andWhere("o.isPaid = 1")
             ->andWhere('o.user = :user')
             ->setParameter('user', $user)
             ->orderBy('o.id','DESC')
